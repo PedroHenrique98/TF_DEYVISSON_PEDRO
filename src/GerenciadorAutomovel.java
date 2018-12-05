@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.*;
 
 public class GerenciadorAutomovel implements Serializable {
@@ -75,4 +76,24 @@ public class GerenciadorAutomovel implements Serializable {
         return (lista.get(lista.size()-1).getOdometroAtual() - lista.get(lista.size()-2).getOdometroAtual()) / lista.get(lista.size()-1).getLitros();
     }
 
+    public double valorGastoMesAtual(List<Abastecimento> lista){
+        double soma =0;
+        for(Abastecimento abast: lista){
+            if(abast.getData().getMonth() == LocalDate.now().getMonth()){
+                soma = soma + abast.getPrecoTotal();
+            }
+        }
+
+        return soma;
+    }
+
+    public double valorGastoMesAnterior (List<Abastecimento> lista){
+        double soma = 0;
+        for(Abastecimento abast: lista){
+            if(abast.getData().getMonth() == LocalDate.now().minusMonths(1).getMonth()){
+                soma = soma + abast.getPrecoTotal();
+            }
+        }
+        return soma;
+    }
 }

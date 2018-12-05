@@ -12,6 +12,9 @@ public class GerenciadorAbastecimento implements Serializable {
 
     public void solicitarAbastecimento(Automovel auto, String tipoc, double odometroa, double lit, double precol) {
         auto.setOdometro(odometroa);
+        if(auto.getCapTanque()<lit){
+            throw new IllegalArgumentException("Capacidade do tanque não suporta essa quantidade de litros de combustível");
+        }
         Abastecimento ab = new Abastecimento(auto.getPlacaVeiculo(), tipoc, odometroa, lit, precol);
         abastecimentos.add(ab);
     }
