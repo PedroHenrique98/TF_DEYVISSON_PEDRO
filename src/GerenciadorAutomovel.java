@@ -39,4 +39,38 @@ public class GerenciadorAutomovel {
         return str + "]";
     }
 
+    public double mediaVolumeAbastecimentos(List<Abastecimento> lista){
+        double soma = 0;
+        for(Abastecimento abast: lista){
+            soma = soma + abast.getLitros();
+        }
+
+        return soma / lista.size();
+    }
+
+    public double mediaValorAbastecimentos(List<Abastecimento> lista){
+        double soma = 0;
+        for(Abastecimento abast: lista){
+            soma = soma + abast.getPrecoTotal();
+        }
+
+        return soma / lista.size();
+    }
+
+    public double mediaCustoQuilometroAbastecimentos(List<Abastecimento> lista){
+        double soma = 0;
+        for(Abastecimento abast: lista){
+            soma = soma + abast.getPrecoTotal());
+        }
+
+        return soma / lista.get(lista.size()-1).getOdometroAtual() - lista.get(0).getOdometroAtual();
+    }
+
+    public double rendimentoPorLitro(List<Abastecimento> lista){
+        if(lista.size() < 2){
+            throw new IllegalArgumentException("Rendimento Incalculável");
+        }
+        return lista.get(lista.size()-1).getOdometroAtual() - lista.get(lista.size()-2).getOdometroAtual() / lista.get(lista.size()-1).getLitros();
+    }
+
 }
