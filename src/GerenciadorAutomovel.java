@@ -8,7 +8,7 @@ public class GerenciadorAutomovel {
         automoveis = new ArrayList<>();
     }
 
-    public void cadastraAutomovel(String pv, String m, int a, String f, int ct, float o){
+    public void cadastraAutomovel(String pv, String m, int a, String f, int ct, double o){
         if(buscarAutomovel(pv) != null) {
             throw new IllegalArgumentException("Placa do veiculo duplicada!");
         }
