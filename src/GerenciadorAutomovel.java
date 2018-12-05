@@ -1,10 +1,12 @@
+import java.io.Serializable;
 import java.util.*;
 
-public class GerenciadorAutomovel {
+public class GerenciadorAutomovel implements Serializable {
 
     private List<Automovel> automoveis;
 
     public GerenciadorAutomovel(){
+        super();
         automoveis = new ArrayList<>();
         automoveis.clear();
     }

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainTeste {
@@ -25,7 +24,7 @@ public class MainTeste {
         gabast.solicitarAbastecimento(a2, "Gasolina", a2.getOdometro(), 35, 4.69);
 
         List<Abastecimento> teste = gabast.getAbastecimentosAutomovel("ABC1234");
-        System.out.println(teste);
+        //System.out.println(teste);
 
 
     }

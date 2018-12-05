@@ -1,4 +1,6 @@
-public class Automovel {
+import java.io.Serializable;
+
+public class Automovel  implements Serializable {
 
     private String placaVeiculo;
 
