@@ -25,6 +25,20 @@ public class Automovel {
 
     public Automovel(String pv, String m, int a, String f, int ct, double o) {
         super();
+        /*
+        if(a < 1769) {
+            throw new IllegalArgumentException("Ano do veiculo invalido!");
+        }
+        if(ct <= 0) {
+            throw new IllegalArgumentException("Capacidade do tanque do veiculo invalido!");
+        }
+        if(o < 0) {
+            throw new IllegalArgumentException("Odometro do veiculo invalido!");
+        }
+        if(pv.length() != 7) {
+            throw new IllegalArgumentException("Placa do veiculo invalida, tente no formato 'AAA1111'!");
+        }
+        */
         placaVeiculo = new SimpleStringProperty(pv);
         modelo = new SimpleStringProperty(m);
         ano = new SimpleIntegerProperty(a);

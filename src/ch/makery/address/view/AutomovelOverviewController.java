@@ -1,6 +1,9 @@
 package ch.makery.address.view;
 
 import ch.makery.address.model.Automovel;
+import ch.makery.address.model.EscritaArquivos;
+import ch.makery.address.model.GerenciadorAbastecimento;
+import ch.makery.address.model.GerenciadorAutomovel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -83,9 +86,9 @@ public class AutomovelOverviewController {
             // Nothing selected.
             Alert alert = new Alert(AlertType.WARNING);
             alert.initOwner(mainApp.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Automovel Selected");
-            alert.setContentText("Please select a person in the table.");
+            alert.setTitle("Sem selecao");
+            alert.setHeaderText("Automovel nao selecionado");
+            alert.setContentText("Por favor, selecione um automovel na tabela.");
             
             alert.showAndWait();
         }
@@ -110,12 +113,11 @@ public class AutomovelOverviewController {
             }
 
         } else {
-            // Nothing selected.
             Alert alert = new Alert(AlertType.WARNING);
             alert.initOwner(mainApp.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Automovel Selected");
-            alert.setContentText("Please select a person in the table.");
+            alert.setTitle("Sem selecao");
+            alert.setHeaderText("Nenhum automovel Selecionado");
+            alert.setContentText("Por favor, Selecione um automovel.");
             
             alert.showAndWait();
         }
