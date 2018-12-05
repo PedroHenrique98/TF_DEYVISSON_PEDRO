@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainTeste {
     public static void main(String args[]){
         GerenciadorAutomovel gauto = new GerenciadorAutomovel();
@@ -10,6 +13,19 @@ public class MainTeste {
         gauto.cadastraAutomovel("CBA4321", "KAPTUR", 2017, "RENAULT", 60, 69815.65);
         gauto.cadastraAutomovel("ACB1234", "GOL", 2016, "VOLKSWAGEN", 35, 8000.0);
         gauto.cadastraAutomovel("ACB4321", "T-CROSS", 2018, "VOLKSWAGEN", 50, 300.84);
+
+        Automovel a1 = gauto.buscarAutomovel("ABC1234");
+        Automovel a2 = gauto.buscarAutomovel("ABC4321");
+        //System.out.println(a1);
+
+        gabast.solicitarAbastecimento(a1, "Etanol", a1.getOdometro(), 20, 3.59);
+        gabast.solicitarAbastecimento(a2, "Gasolina", a2.getOdometro(), 10, 4.69);
+        gabast.solicitarAbastecimento(a1, "Etanol", a1.getOdometro(), 10, 3.59);
+        gabast.solicitarAbastecimento(a1, "Etanol", a1.getOdometro(), 12, 3.59);
+        gabast.solicitarAbastecimento(a2, "Gasolina", a2.getOdometro(), 35, 4.69);
+
+        List<Abastecimento> teste = gabast.getAbastecimentosAutomovel("ABC1234");
+        System.out.println(teste);
 
 
     }
