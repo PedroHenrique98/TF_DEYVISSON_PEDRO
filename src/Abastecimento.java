@@ -92,8 +92,8 @@ public class Abastecimento {
 
     @Override
     public String toString() {
-        return "(" + placaAutomovel + "," + tipoCombustivel + "," + data.toString() + ","
-                + odometroAtual + "," + litros + "," + precoLitro
-                + "," + precoTotal + ")";
+        return "(" + placaAutomovel + ", " + tipoCombustivel + ", " + data.toString() + ", "
+                + odometroAtual + ", " + litros + ", " + precoLitro
+                + ", " + precoTotal + ")";
     }
 }

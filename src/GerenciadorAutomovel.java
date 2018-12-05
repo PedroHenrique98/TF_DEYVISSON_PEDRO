@@ -35,7 +35,7 @@ public class GerenciadorAutomovel implements Serializable {
         String str = "[";
         for(Automovel auto: automoveis) {
             str = str + auto.toString();
-            str = str + ", ";
+            str = str + "; ";
         }
         str = str.substring(0,str.length()-2);
         return str + "]";

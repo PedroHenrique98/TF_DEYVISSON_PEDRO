@@ -20,7 +20,7 @@ public class GerenciadorAbastecimento implements Serializable {
         String str = "[";
         for(Abastecimento abast : abastecimentos) {
             str = str + abast.toString();
-            str = str + ", ";
+            str = str + "; ";
         }
         str = str.substring(0,str.length()-2);
         return str + "]";
