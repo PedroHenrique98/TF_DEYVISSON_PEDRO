@@ -60,17 +60,17 @@ public class GerenciadorAutomovel {
     public double mediaCustoQuilometroAbastecimentos(List<Abastecimento> lista){
         double soma = 0;
         for(Abastecimento abast: lista){
-            soma = soma + abast.getPrecoTotal());
+            soma = soma + abast.getPrecoTotal();
         }
-
-        return soma / lista.get(lista.size()-1).getOdometroAtual() - lista.get(0).getOdometroAtual();
+        
+        return soma / (lista.get(lista.size()-1).getOdometroAtual() - lista.get(0).getOdometroAtual());
     }
 
     public double rendimentoPorLitro(List<Abastecimento> lista){
         if(lista.size() < 2){
             throw new IllegalArgumentException("Rendimento Incalculável");
         }
-        return lista.get(lista.size()-1).getOdometroAtual() - lista.get(lista.size()-2).getOdometroAtual() / lista.get(lista.size()-1).getLitros();
+        return (lista.get(lista.size()-1).getOdometroAtual() - lista.get(lista.size()-2).getOdometroAtual()) / lista.get(lista.size()-1).getLitros();
     }
 
 }
