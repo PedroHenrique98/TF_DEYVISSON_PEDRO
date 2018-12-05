@@ -31,17 +31,9 @@ public class AutomovelOverviewController {
     // Reference to the main application.
     private MainApp mainApp;
 
-    /**
-     * The constructor.
-     * The constructor is called before the initialize() method.
-     */
     public AutomovelOverviewController() {
     }
 
-    /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
-     */
     @FXML
     private void initialize() {
         // Initialize the person table with the two columns.
@@ -55,24 +47,13 @@ public class AutomovelOverviewController {
                 (observable, oldValue, newValue) -> showAutomovelDetails(newValue));
     }
 
-    /**
-     * Is called by the main application to give a reference back to itself.
-     * 
-     * @param mainApp
-     */
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
 
         // Add observable list data to the table
         automovelTable.setItems(mainApp.getAutomovelData());
     }
-    
-    /**
-     * Fills all text fields to show details about the automovel.
-     * If the specified automovel is null, all text fields are cleared.
-     * 
-     * @param automovel the automovel or null
-     */
+
     private void showAutomovelDetails(Automovel automovel) {
         if (automovel != null) {
             // Fill the labels with info from the automovel object.
@@ -92,10 +73,7 @@ public class AutomovelOverviewController {
             odometroLabel.setText("");
         }
     }
-    
-    /**
-     * Called when the user clicks on the delete button.
-     */
+
     @FXML
     private void handleDeleteAutomovel() {
         int selectedIndex = automovelTable.getSelectionModel().getSelectedIndex();
@@ -112,11 +90,7 @@ public class AutomovelOverviewController {
             alert.showAndWait();
         }
     }
-    
-    /**
-     * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new person.
-     */
+
     @FXML
     private void handleNewAutomovel() {
         Automovel tempAutomovel = new Automovel();
@@ -126,10 +100,6 @@ public class AutomovelOverviewController {
         }
     }
 
-    /**
-     * Called when the user clicks the edit button. Opens a dialog to edit
-     * details for the selected person.
-     */
     @FXML
     private void handleEditAutomovel() {
         Automovel selectedAutomovel = automovelTable.getSelectionModel().getSelectedItem();

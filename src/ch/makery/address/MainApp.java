@@ -20,26 +20,21 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
     
-    /**
-     * The data as an observable list of Persons.
-     */
+
     private ObservableList<Automovel> automoveisList = FXCollections.observableArrayList();
 
-    /**
-     * Constructor
-     */
-    public MainApp() {
-        // Add some sample data
-        GerenciadorAutomovel gauto = new GerenciadorAutomovel();
 
+    public MainApp() {
         GerenciadorAbastecimento gabast = new GerenciadorAbastecimento();
 
-        gauto.cadastraAutomovel("ABC1234", "UNO", 2018, "FIAT", 45, 0.0);
+        /*gauto.cadastraAutomovel("ABC1234", "UNO", 2018, "FIAT", 45, 0.0);
         gauto.cadastraAutomovel("ABC4321", "PALIO", 2015, "FIAT", 40, 45000.40);
         gauto.cadastraAutomovel("CBA1234", "SANDERO", 2013, "RENAULT", 55, 135480.90);
         gauto.cadastraAutomovel("CBA4321", "KAPTUR", 2017, "RENAULT", 60, 69815.65);
         gauto.cadastraAutomovel("ACB1234", "GOL", 2016, "VOLKSWAGEN", 35, 8000.0);
         gauto.cadastraAutomovel("ACB4321", "T-CROSS", 2018, "VOLKSWAGEN", 50, 300.84);
+        */
+        GerenciadorAutomovel gauto = new LeituraArquivos().lerArquivoAutomovel();
 
         Automovel a1 = gauto.buscarAutomovel("ABC1234");
         Automovel a2 = gauto.buscarAutomovel("ABC4321");
@@ -52,12 +47,10 @@ public class MainApp extends Application {
         gabast.solicitarAbastecimento(a2, "Gasolina", a2.getOdometro(), 35, 4.69);
 
         automoveisList = FXCollections.observableList(gauto.getAutomoveis());
+        EscritaArquivos escritaArquivos = new EscritaArquivos();
+        escritaArquivos.escreveArquivos(gabast, gauto);
     }
 
-    /**
-     * Returns the data as an observable list of Persons. 
-     * @return
-     */
     public ObservableList<Automovel> getAutomovelData() {
         return automoveisList;
     }
@@ -72,9 +65,6 @@ public class MainApp extends Application {
         showAutomovelOverview();
     }
 
-    /**
-     * Initializes the root layout.
-     */
     public void initRootLayout() {
         try {
             // Load root layout from fxml file.
@@ -91,9 +81,6 @@ public class MainApp extends Application {
         }
     }
 
-    /**
-     * Shows the person overview inside the root layout.
-     */
     public void showAutomovelOverview() {
         try {
             // Load person overview.
@@ -112,15 +99,7 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
-    
-    /**
-     * Opens a dialog to edit details for the specified automovel. If the user
-     * clicks OK, the changes are saved into the provided automovel object and true
-     * is returned.
-     * 
-     * @param automovel the automovel object to be edited
-     * @return true if the user clicked OK, false otherwise.
-     */
+
     public boolean showAutomovelEditDialog(Automovel automovel) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
@@ -151,10 +130,6 @@ public class MainApp extends Application {
         }
     }
 
-    /**
-     * Returns the main stage.
-     * @return
-     */
     public Stage getPrimaryStage() {
         return primaryStage;
     }

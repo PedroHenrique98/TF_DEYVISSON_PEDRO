@@ -1,3 +1,5 @@
+package ch.makery.address.model;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.nio.file.Files;

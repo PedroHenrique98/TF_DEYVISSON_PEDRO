@@ -7,11 +7,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import ch.makery.address.model.Automovel;
 
-/**
- * Dialog to edit details of a automovel.
- * 
- * @author Marco Jakob
- */
 public class AutomovelEditDialogController {
 
     @FXML
@@ -32,28 +27,14 @@ public class AutomovelEditDialogController {
     private Automovel automovel;
     private boolean okClicked = false;
 
-    /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
-     */
     @FXML
     private void initialize() {
     }
 
-    /**
-     * Sets the stage of this dialog.
-     *
-     * @param dialogStage
-     */
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
 
-    /**
-     * Sets the automovel to be edited in the dialog.
-     *
-     * @param automovel
-     */
     public void setAutomovel(Automovel automovel) {
         this.automovel = automovel;
 
@@ -65,18 +46,10 @@ public class AutomovelEditDialogController {
         odometroField.setText(String.valueOf(automovel.getOdometro()));
     }
 
-    /**
-     * Returns true if the user clicked OK, false otherwise.
-     *
-     * @return
-     */
     public boolean isOkClicked() {
         return okClicked;
     }
 
-    /**
-     * Called when the user clicks ok.
-     */
     @FXML
     private void handleOk() {
         if (isInputValid()) {
@@ -92,19 +65,11 @@ public class AutomovelEditDialogController {
         }
     }
 
-    /**
-     * Called when the user clicks cancel.
-     */
     @FXML
     private void handleCancel() {
         dialogStage.close();
     }
 
-    /**
-     * Validates the user input in the text fields.
-     *
-     * @return true if the input is valid
-     */
     private boolean isInputValid() {
         String errorMessage = "";
 
