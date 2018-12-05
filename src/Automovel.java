@@ -15,6 +15,7 @@ public class Automovel  implements Serializable {
     private double odometro;
 
     public Automovel(String pv, String m, int a, String f, int ct, double o) {
+        super();
         if(a < 1769) {
             throw new IllegalArgumentException("Ano do veiculo invalido!");
         }
