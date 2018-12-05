@@ -1,10 +1,12 @@
+import java.io.Serializable;
 import java.util.*;
 
-public class GerenciadorAbastecimento {
+public class GerenciadorAbastecimento implements Serializable {
 
     private List<Abastecimento> abastecimentos;
 
     public GerenciadorAbastecimento() {
+        super();
         abastecimentos = new ArrayList<>();
     }
 
