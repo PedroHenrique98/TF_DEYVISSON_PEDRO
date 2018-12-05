@@ -35,7 +35,24 @@ public class MainApp extends Application {
         gauto.cadastraAutomovel("CBA4321", "KAPTUR", 2017, "RENAULT", 60, 69815.65);
         gauto.cadastraAutomovel("ACB1234", "GOL", 2016, "VOLKSWAGEN", 35, 8000.0);
         gauto.cadastraAutomovel("ACB4321", "T-CROSS", 2018, "VOLKSWAGEN", 50, 300.84);
-        */
+
+        gauto.cadastraAutomovel("QWE1234", "ARGO", 2018, "FIAT", 40, 125.0);
+        gauto.cadastraAutomovel("QWE4321", "MOBI", 2015, "FIAT", 34, 48000.40);
+        gauto.cadastraAutomovel("EWQ1234", "DUSTER", 2013, "RENAULT", 55, 863880.90);
+        gauto.cadastraAutomovel("EWQ4321", "NOVA", 2017, "RENAULT", 10, 1315.65);
+        gauto.cadastraAutomovel("WQE1234", "GOL", 2014, "VOLKSWAGEN", 35, 805600.0);
+        gauto.cadastraAutomovel("WQE4321", "T-CROSS", 2018, "VOLKSWAGEN", 50, 900.84);
+
+        gauto.cadastraAutomovel("JKL1234", "DOBLO", 2018, "FIAT", 34, 0.0);
+        gauto.cadastraAutomovel("JKL4321", "STRADA", 2015, "FIAT", 34, 21000.40);
+        gauto.cadastraAutomovel("LJK1234", "DUSTER", 2013, "RENAULT", 55, 135480.90);
+        gauto.cadastraAutomovel("KJL1234", "VIRTUS", 2016, "VOLKSWAGEN", 33, 3000.0);
+
+        gauto.cadastraAutomovel("BNM4321", "DUCATO", 2015, "FIAT", 34, 45000.40);
+        gauto.cadastraAutomovel("MBN1234", "DUSTER", 2013, "RENAULT", 55, 905480.90);
+        gauto.cadastraAutomovel("MBN4321", "NOVA", 2017, "RENAULT", 10, 32815.65);
+        gauto.cadastraAutomovel("NMB4321", "GOLF", 2018, "VOLKSWAGEN", 50, 3100.84);
+*/
 
         Automovel a1 = gauto.buscarAutomovel("ABC1234");
         Automovel a2 = gauto.buscarAutomovel("ABC4321");
@@ -46,6 +63,40 @@ public class MainApp extends Application {
         gabast.solicitarAbastecimento(a1, "Etanol", a1.getOdometro(), 10, 3.59);
         gabast.solicitarAbastecimento(a1, "Etanol", a1.getOdometro(), 12, 3.59);
         gabast.solicitarAbastecimento(a2, "Gasolina", a2.getOdometro(), 35, 4.69);
+
+
+        /*
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(0), "Etanol", gauto.getAutomoveis().get(0).getOdometro(), 20, 3.59);
+        /*gabast.solicitarAbastecimento(gauto.getAutomoveis().get(7), "Etanol", gauto.getAutomoveis().get(7).getOdometro(), 10, 3.59);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(0), "Etanol", gauto.getAutomoveis().get(0).getOdometro(), 12.4, 3.59);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(4), "Etanol", gauto.getAutomoveis().get(4).getOdometro(), 13.9, 3.59);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(0), "Etanol", gauto.getAutomoveis().get(0).getOdometro(), 2.1, 3.59);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(7), "Etanol", gauto.getAutomoveis().get(7).getOdometro(), 6, 3.59);
+
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(1), "GNV", gauto.getAutomoveis().get(1).getOdometro(), 14, 4.69);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(1), "GNV", gauto.getAutomoveis().get(1).getOdometro(), 6, 4.69);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(4), "GNV", gauto.getAutomoveis().get(4).getOdometro(), 5.4, 4.69);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(1), "GNV", gauto.getAutomoveis().get(1).getOdometro(), 4.9, 3.59);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(4), "GNV", gauto.getAutomoveis().get(4).getOdometro(), 2.1, 4.69);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(5), "GNV", gauto.getAutomoveis().get(5).getOdometro(), 6, 3.59);
+
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(1), "Gasolina", gauto.getAutomoveis().get(1).getOdometro(), 14, 4.69);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(12), "Gasolina", gauto.getAutomoveis().get(12).getOdometro(), 6, 4.69);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(4), "Gasolina", gauto.getAutomoveis().get(4).getOdometro(), 5.4, 4.69);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(20), "Gasolina", gauto.getAutomoveis().get(20).getOdometro(), 4.9, 3.59);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(14), "Gasolina", gauto.getAutomoveis().get(14).getOdometro(), 2.1, 4.69);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(21), "Gasolina", gauto.getAutomoveis().get(21).getOdometro(), 6, 3.59);
+
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(9), "Etanol", gauto.getAutomoveis().get(9).getOdometro(), 14, 5.14);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(17), "Etanol", gauto.getAutomoveis().get(17).getOdometro(), 6, 5.14);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(17), "Etanol", gauto.getAutomoveis().get(17).getOdometro(), 5.4, 5.14);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(13), "Etanol", gauto.getAutomoveis().get(13).getOdometro(), 4.9, 5.14);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(13), "Etanol", gauto.getAutomoveis().get(13).getOdometro(), 2.1, 5.14);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(10), "Etanol", gauto.getAutomoveis().get(10).getOdometro(), 6, 5.14);
+*/
+
+
+
 
         automoveisList = FXCollections.observableList(gauto.getAutomoveis());
         EscritaArquivos escritaArquivos = new EscritaArquivos();
