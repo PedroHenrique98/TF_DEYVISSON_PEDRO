@@ -64,7 +64,7 @@ public class GerenciadorAutomovel implements Serializable {
         for(Abastecimento abast: lista){
             soma = soma + abast.getPrecoTotal();
         }
-        
+
         return soma / (lista.get(lista.size()-1).getOdometroAtual() - lista.get(0).getOdometroAtual());
     }
 
