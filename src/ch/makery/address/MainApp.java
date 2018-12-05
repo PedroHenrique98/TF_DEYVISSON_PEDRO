@@ -48,7 +48,7 @@ public class MainApp extends Application {
 
         automoveisList = FXCollections.observableList(gauto.getAutomoveis());
         EscritaArquivos escritaArquivos = new EscritaArquivos();
-        escritaArquivos.escreveArquivos(gabast, gauto);
+        escritaArquivos.escreveArquivos(gauto);
     }
 
     public ObservableList<Automovel> getAutomovelData() {

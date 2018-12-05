@@ -30,8 +30,9 @@ public class AutomovelOverviewController {
     private Label capacidadeLabel;
     @FXML
     private Label odometroLabel;
+    @FXML
+    private Label rendimentoLabel;
 
-    // Reference to the main application.
     private MainApp mainApp;
 
     public AutomovelOverviewController() {
@@ -39,13 +40,10 @@ public class AutomovelOverviewController {
 
     @FXML
     private void initialize() {
-        // Initialize the person table with the two columns.
         placaColumn.setCellValueFactory(cellData -> cellData.getValue().getPlacaVeiculoP());
-        
-        // Clear person details.
+
         showAutomovelDetails(null);
 
-        // Listen for selection changes and show the person details when changed.
         automovelTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showAutomovelDetails(newValue));
     }
@@ -53,13 +51,11 @@ public class AutomovelOverviewController {
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
 
-        // Add observable list data to the table
         automovelTable.setItems(mainApp.getAutomovelData());
     }
 
     private void showAutomovelDetails(Automovel automovel) {
         if (automovel != null) {
-            // Fill the labels with info from the automovel object.
             placaLabel.setText(automovel.getPlacaVeiculo());
             modeloLabel.setText(automovel.getModelo());
             anoLabel.setText(String.valueOf(automovel.getAno()));
@@ -67,7 +63,6 @@ public class AutomovelOverviewController {
             capacidadeLabel.setText(String.valueOf(automovel.getCapTanque()));
             odometroLabel.setText(String.valueOf(automovel.getOdometro()));
         } else {
-            // Automovel is null, remove all the text.
             placaLabel.setText("");
             modeloLabel.setText("");
             anoLabel.setText("");
@@ -78,18 +73,25 @@ public class AutomovelOverviewController {
     }
 
     @FXML
+    private void handleSalvar(){
+        GerenciadorAutomovel gauto = new GerenciadorAutomovel();
+        gauto.setAutomoveis(automovelTable.getItems());
+        EscritaArquivos escritaArquivos = new EscritaArquivos();
+        escritaArquivos.escreveArquivos(gauto);
+    }
+
+    @FXML
     private void handleDeleteAutomovel() {
         int selectedIndex = automovelTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
             automovelTable.getItems().remove(selectedIndex);
         } else {
-            // Nothing selected.
             Alert alert = new Alert(AlertType.WARNING);
             alert.initOwner(mainApp.getPrimaryStage());
             alert.setTitle("Sem selecao");
             alert.setHeaderText("Automovel nao selecionado");
             alert.setContentText("Por favor, selecione um automovel na tabela.");
-            
+
             alert.showAndWait();
         }
     }
@@ -118,7 +120,7 @@ public class AutomovelOverviewController {
             alert.setTitle("Sem selecao");
             alert.setHeaderText("Nenhum automovel Selecionado");
             alert.setContentText("Por favor, Selecione um automovel.");
-            
+
             alert.showAndWait();
         }
     }

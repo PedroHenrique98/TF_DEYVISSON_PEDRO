@@ -33,6 +33,10 @@ public class GerenciadorAutomovel implements Serializable {
         return null;
     }
 
+    public void setAutomoveis(List<Automovel> automoveis) {
+        this.automoveis = automoveis;
+    }
+
     public String toString() {
         String str = "[";
         for(Automovel auto: automoveis) {

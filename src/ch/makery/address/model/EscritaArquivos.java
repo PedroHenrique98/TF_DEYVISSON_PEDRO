@@ -10,7 +10,7 @@ public class EscritaArquivos {
 
     public EscritaArquivos(){}
 
-    public void escreveArquivos(GerenciadorAbastecimento gabast, GerenciadorAutomovel gauto){
+    public void escreveArquivos(GerenciadorAutomovel gauto){
         System.out.println("Gravando arquivos:");
 
         Path caminhoAutomoveis = Paths.get("ArquivoAutomoveis.txt");
@@ -25,6 +25,7 @@ public class EscritaArquivos {
             System.out.println("Falha ao atualizar arquivo de Automoveis! :(");
             e.printStackTrace();
         }
+        /*
         try(ObjectOutputStream gravador2 = new ObjectOutputStream(Files.newOutputStream(caminhoAbastecimentos))) {
             gravador2.writeUTF(gabast.toString());
             System.out.println("...");
@@ -34,5 +35,6 @@ public class EscritaArquivos {
             System.out.println("Falha ao atualizar arquivo de Abastecimento! :(");
             e.printStackTrace();
         }
+        */
     }
 }
