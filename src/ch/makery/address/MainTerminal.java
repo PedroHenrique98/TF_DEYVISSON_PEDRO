@@ -55,7 +55,7 @@ public class MainTerminal {
                 String placa = scan.nextLine();
                 System.out.println("" + gauto.mediaCustoQuilometroAbastecimentos(gabast.getAbastecimentosAutomovel(placa)));
             }
-            
+
         }
 
 
