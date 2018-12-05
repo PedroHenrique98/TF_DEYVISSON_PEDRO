@@ -6,20 +6,25 @@ public class GerenciadorAutomovel {
 
     public GerenciadorAutomovel(){
         automoveis = new ArrayList<>();
+        automoveis.clear();
     }
 
-    public void cadastraAutomovel(String pv, String m, int a, String f, int ct, double o){
-        if(buscarAutomovel(pv) != null) {
+    public void cadastraAutomovel(String placa, String mod, int ano, String fab, int capt, double odo){
+        if(buscarAutomovel(placa) != null) {
             throw new IllegalArgumentException("Placa do veiculo duplicada!");
         }
-        Automovel auto = new Automovel(pv, m, a, f, ct, o);
+        Automovel auto = new Automovel(placa, mod, ano, fab, capt, odo);
         automoveis.add(auto);
     }
 
     public Automovel buscarAutomovel(String placa) {
-        for(Automovel auto: automoveis) {
-            if(auto.getPlacaVeiculo() == placa);
-            return auto;
+        if(automoveis.isEmpty()) {
+            return null;
+        }
+        for (Automovel auto : automoveis) {
+            if (auto.getPlacaVeiculo().equals(placa)) {
+                return auto;
+            }
         }
         return null;
     }
