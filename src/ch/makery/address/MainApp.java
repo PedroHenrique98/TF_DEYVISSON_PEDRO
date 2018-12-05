@@ -34,7 +34,7 @@ public class MainApp extends Application {
         gauto.cadastraAutomovel("CBA1234", "SANDERO", 2013, "RENAULT", 55, 135480.90);
         gauto.cadastraAutomovel("CBA4321", "KAPTUR", 2017, "RENAULT", 60, 69815.65);
         gauto.cadastraAutomovel("ACB1234", "GOL", 2016, "VOLKSWAGEN", 35, 8000.0);
-        gauto.cadastraAutomovel("ACB4321", "T-CROSS", 2018, "VOLKSWAGEN", 50, 300.84);
+        gauto.cadastraAutomovel("ACB4321", "T-CROSS", 2018, "VOLKSWAGEN", 50, 300.84);*/
 
         gauto.cadastraAutomovel("QWE1234", "ARGO", 2018, "FIAT", 40, 125.0);
         gauto.cadastraAutomovel("QWE4321", "MOBI", 2015, "FIAT", 34, 48000.40);
@@ -52,7 +52,6 @@ public class MainApp extends Application {
         gauto.cadastraAutomovel("MBN1234", "DUSTER", 2013, "RENAULT", 55, 905480.90);
         gauto.cadastraAutomovel("MBN4321", "NOVA", 2017, "RENAULT", 10, 32815.65);
         gauto.cadastraAutomovel("NMB4321", "GOLF", 2018, "VOLKSWAGEN", 50, 3100.84);
-*/
 
         Automovel a1 = gauto.buscarAutomovel("ABC1234");
         Automovel a2 = gauto.buscarAutomovel("ABC4321");
@@ -65,9 +64,9 @@ public class MainApp extends Application {
         gabast.solicitarAbastecimento(a2, "Gasolina", a2.getOdometro(), 35, 4.69);
 
 
-        /*
+
         gabast.solicitarAbastecimento(gauto.getAutomoveis().get(0), "Etanol", gauto.getAutomoveis().get(0).getOdometro(), 20, 3.59);
-        /*gabast.solicitarAbastecimento(gauto.getAutomoveis().get(7), "Etanol", gauto.getAutomoveis().get(7).getOdometro(), 10, 3.59);
+        gabast.solicitarAbastecimento(gauto.getAutomoveis().get(7), "Etanol", gauto.getAutomoveis().get(7).getOdometro(), 10, 3.59);
         gabast.solicitarAbastecimento(gauto.getAutomoveis().get(0), "Etanol", gauto.getAutomoveis().get(0).getOdometro(), 12.4, 3.59);
         gabast.solicitarAbastecimento(gauto.getAutomoveis().get(4), "Etanol", gauto.getAutomoveis().get(4).getOdometro(), 13.9, 3.59);
         gabast.solicitarAbastecimento(gauto.getAutomoveis().get(0), "Etanol", gauto.getAutomoveis().get(0).getOdometro(), 2.1, 3.59);
@@ -93,7 +92,6 @@ public class MainApp extends Application {
         gabast.solicitarAbastecimento(gauto.getAutomoveis().get(13), "Etanol", gauto.getAutomoveis().get(13).getOdometro(), 4.9, 5.14);
         gabast.solicitarAbastecimento(gauto.getAutomoveis().get(13), "Etanol", gauto.getAutomoveis().get(13).getOdometro(), 2.1, 5.14);
         gabast.solicitarAbastecimento(gauto.getAutomoveis().get(10), "Etanol", gauto.getAutomoveis().get(10).getOdometro(), 6, 5.14);
-*/
 
 
 
