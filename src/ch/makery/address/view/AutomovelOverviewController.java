@@ -77,7 +77,7 @@ public class AutomovelOverviewController {
         GerenciadorAutomovel gauto = new GerenciadorAutomovel();
         gauto.setAutomoveis(automovelTable.getItems());
         EscritaArquivos escritaArquivos = new EscritaArquivos();
-        escritaArquivos.escreveArquivos(gauto);
+        escritaArquivos.escreveArquivo(gauto);
     }
 
     @FXML
