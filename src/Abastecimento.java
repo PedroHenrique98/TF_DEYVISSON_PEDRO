@@ -1,9 +1,8 @@
-import java.time.*;
-
+import java.time.LocalDate;
 public class Abastecimento {
     private String placaAutomovel;
 
-    private String tipoCombustivel;
+    public String tipoCombustivel;
 
     private LocalDate data;
 
@@ -16,6 +15,16 @@ public class Abastecimento {
     private double precoTotal;
 
     public Abastecimento(String auto, String tipoc, double odometroa, double lit, double precol) {
+        if(odometroa<0){
+            throw new IllegalArgumentException("Odometro não pode ser negativo!");
+        }
+        if(lit<=0){
+            throw new IllegalArgumentException("Litros abastecidos não podem ser negativo!");
+        }
+        if(precol<=0){
+            throw new IllegalArgumentException("Preco não pode ser negativo, nem de graça!");
+        }
+
         placaAutomovel = auto;
         tipoCombustivel = tipoc;
         odometroAtual = odometroa;
@@ -25,10 +34,66 @@ public class Abastecimento {
         data = LocalDate.now();
     }
 
+    public void setLitros(double litros) {
+        this.litros = litros;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public void setOdometroAtual(double odometroAtual) {
+        this.odometroAtual = odometroAtual;
+    }
+
+    public void setPlacaAutomovel(String placaAutomovel) {
+        this.placaAutomovel = placaAutomovel;
+    }
+
+    public void setPrecoLitro(double precoLitro) {
+        this.precoLitro = precoLitro;
+    }
+
+    public void setPrecoTotal(double precoTotal) {
+        this.precoTotal = precoTotal;
+    }
+
+    public void setTipoCombustivel(String tipoCombustivel) {
+        this.tipoCombustivel = tipoCombustivel;
+    }
+
+    public double getOdometroAtual() {
+        return odometroAtual;
+    }
+
+    public double getLitros() {
+        return litros;
+    }
+
+    public double getPrecoLitro() {
+        return precoLitro;
+    }
+
+    public double getPrecoTotal() {
+        return precoTotal;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public String getPlacaAutomovel() {
+        return placaAutomovel;
+    }
+
+    public String getTipoCombustivel() {
+        return tipoCombustivel;
+    }
+
     @Override
     public String toString() {
-        return "\nCodigo Automóvel: " + placaAutomovel + "\nTipo de Combustível: " + tipoCombustivel +"\nData do Abastecimento: " + data.toString() + "\nOdometro Atual"
-                + odometroAtual + "\nLitros Abastecidos: " + litros + "\nPreço por litro: " + precoLitro
-                + "\nPreço Total: " + precoTotal;
+        return "(" + placaAutomovel + "," + tipoCombustivel + "," + data.toString() + ","
+                + odometroAtual + "," + litros + "," + precoLitro
+                + "," + precoTotal + ")";
     }
 }
