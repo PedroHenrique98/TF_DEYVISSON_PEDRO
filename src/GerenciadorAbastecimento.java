@@ -38,5 +38,7 @@ public class GerenciadorAbastecimento implements Serializable {
         }
         return listaAbAutomovel;
     }
-
+    public void Printa(){
+        System.out.println("Show.");
+    }
 }
